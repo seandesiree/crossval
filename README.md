@@ -1,5 +1,7 @@
 # Multi-Rate Pricing Calculator
 
+**Live URL:** https://crossval-6atl.onrender.com/
+
 A small web app for creating documents with line items, applying per-line discounts and
 tax, and computing totals server-side.
 
@@ -144,4 +146,9 @@ In addition to `npm test` (14 passing unit tests on the calculation module):
 
 ## Deployment
 
-Live URL: _TODO — add once deployed._
+**Live URL:** https://crossval-6atl.onrender.com/
+
+Deployed on Render (free plan) via the `render.yaml` blueprint in this repo. The same
+manual verification steps above (signup, create the sample document, finalize, confirm
+edit rejection, check the report) were re-run against this live URL and produced
+identical results to the local run.

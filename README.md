@@ -112,6 +112,11 @@ documents.
 - SQLite (`better-sqlite3`, synchronous) keeps the app dependency-free and easy to run
   locally; a production version would likely move to Postgres for concurrent-write
   safety and proper migrations.
+- **Deployed on Render's free plan, which has no persistent disk.** The SQLite file is
+  reset on every redeploy and whenever the free instance spins down after ~15 minutes of
+  inactivity. Chosen deliberately to keep the deployment free and simple for this
+  exercise; the fix for production is either a Render paid plan with an attached disk,
+  or swapping SQLite for a managed Postgres instance.
 - Frontend is plain JS/no framework — the calculation module and API design are what's
   being exercised here, not frontend tooling.
 

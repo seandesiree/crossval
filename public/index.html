@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Pricing Calculator</h1>
+    <div id="session-info"></div>
+  </header>
+
+  <main id="app"></main>
+
+  <div id="print-area"></div>
+
+  <template id="tpl-auth">
+    <section class="card auth-card">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="login">Log in</button>
+        <button class="tab-btn" data-tab="signup">Sign up</button>
+      </div>
+      <form id="auth-form">
+        <label>Email <input type="email" name="email" required /></label>
+        <label>Password <input type="password" name="password" required minlength="8" /></label>
+        <button type="submit">Continue</button>
+      </form>
+      <p class="error" id="auth-error"></p>
+    </section>
+  </template>
+
+  <template id="tpl-dashboard">
+    <section class="toolbar">
+      <button id="new-doc-btn">+ New document</button>
+      <nav class="view-switch">
+        <button data-view="documents" class="active">Documents</button>
+        <button data-view="report">Summary report</button>
+      </nav>
+    </section>
+    <section id="view-documents"></section>
+    <section id="view-report" hidden></section>
+  </template>
+
+  <template id="tpl-doc-list">
+    <table class="doc-table">
+      <thead>
+        <tr><th>Title</th><th>Customer</th><th>Issue date</th><th>Status</th><th>Grand total</th><th></th></tr>
+      </thead>
+      <tbody id="doc-rows"></tbody>
+    </table>
+  </template>
+
+  <template id="tpl-report">
+    <form id="report-form" class="report-form">
+      <label>From <input type="date" name="from" required /></label>
+      <label>To <input type="date" name="to" required /></label>
+      <button type="submit">Run report</button>
+    </form>
+    <div id="report-results"></div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
